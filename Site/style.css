@@ -98,6 +98,7 @@ header a:hover {
     text-decoration: none;
     font-family: var(--letratextos);
     padding: 2px;
+    font-size: 0.9em;
 }
 
 #linguas a:hover {
@@ -111,7 +112,7 @@ header a:hover {
     align-items: center;
     gap: 24px;
     margin: 0 20px;
-    padding: 10px 0;
+    padding: 10px 0 13px 0;
     border-bottom: 1px solid var(--corprincipal);
 }
 
@@ -150,13 +151,14 @@ picture img {
     flex: 1;
     background-color: var(--corcartao);
     padding: 5px;
-    border: 1px solid var(--corprincipal);
-    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.156);
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.143);
     border-radius: 3px;
+    text-decoration: none;
+    color: var(--corprincipal);
 }
 
 .cartao-atuacao:hover {
-    box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.195);
+    box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.478);
 }
 
 .cartao-atuacao h3 {
@@ -179,6 +181,11 @@ picture img {
 #destaque a {
     text-decoration: none;
     font-weight: bold;
+    color: var(--corlinksebotoes);
+}
+
+#destaque a:hover {
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.163);
 }
 
 /* Trajetória */
@@ -195,6 +202,25 @@ picture img {
     flex-wrap: wrap;
     font-family: var(--letratextos);
     color: var(--corprincipal);
+    font-weight: 600;
+}
+
+.trajetoria-itens a:hover {
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.163);
+}
+
+.trajetoria p {
+    margin: 7px 0px 5px 0;
+}
+
+.trajetoria a {
+    text-decoration: none;
+    color: var(--corlinksebotoes);
+    font-weight: bold;
+}
+
+.trajetoria a:hover {
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.163);
 }
 
 /* Na mídia */
@@ -208,6 +234,17 @@ picture img {
     display: flex;
     flex-wrap: wrap;
     gap: 16px;
+}
+.midia h2{
+    margin-bottom: 0;
+}
+.midia a {
+    text-decoration: none;
+    color: var(--corlinksebotoes);
+}
+
+.midia a:hover {
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.325);
 }
 
 .midia-cartao {
@@ -227,11 +264,17 @@ picture img {
 .contato a {
     text-decoration: none;
     font-weight: bold;
+    color: var(--corlinksebotoes);
+}
+
+.contato a:hover {
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.163);
 }
 
 .contato-links {
     display: flex;
     gap: 16px;
+    color: var(--corlinksebotoes);
 }
 
 /* Footer */
@@ -254,7 +297,7 @@ footer a {
 @media (max-width: 600px) {
     .apresentacao {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
         flex-wrap: wrap;
         text-align: center;
     }
