@@ -14,6 +14,7 @@
 /* Configurações gerais */
 body {
     background-color: var(--corfundo);
+    margin: 0;
 }
 
 h1 {
@@ -60,7 +61,18 @@ header {
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid;
-    padding-bottom: 4px;
+    padding: 4px 3px 3px 4px;
+}
+
+header a {
+    text-decoration: none;
+    color: var(--corprincipal);
+    font-family: var(--letratitulos);
+    font-weight: bold;
+}
+
+header a:hover {
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.163);
 }
 
 #principal {
@@ -88,13 +100,18 @@ header {
     padding: 2px;
 }
 
+#linguas a:hover {
+    text-decoration: underline;
+}
+
 /* Apresentação */
 .apresentacao {
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 24px;
-    padding: 20px;
+    margin: 0 20px;
+    padding: 10px 0;
     border-bottom: 1px solid var(--corprincipal);
 }
 
@@ -166,7 +183,8 @@ picture img {
 
 /* Trajetória */
 .trajetoria {
-    padding: 10px 20px;
+    margin: 0 20px;
+    padding: 10px 0;
     border-bottom: 1px solid var(--corprincipal);
 }
 
@@ -181,7 +199,8 @@ picture img {
 
 /* Na mídia */
 .midia {
-    padding: 10px 20px;
+    margin: 0 20px;
+    padding: 10px 0;
     border-bottom: 1px solid var(--corprincipal);
 }
 
@@ -205,7 +224,7 @@ picture img {
     padding: 10px 20px;
 }
 
-.contato a{
+.contato a {
     text-decoration: none;
     font-weight: bold;
 }
