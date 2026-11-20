@@ -53,12 +53,59 @@ body {
 h1 {
     color: var(--corprincipal);
     font-family: var(--letratitulos);
-    font-size: 2.7em;
-    padding-bottom: 0;
+    font-size: 3em;
+    margin-bottom: 0px;
+    margin-top: 0px;
 }
 
 h2{
     color: var(--corprincipal);
     font-family: var(--letratitulos);
     font-weight: lighter;
+    font-size: 1.5em;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+p{
+    color: var(--corprincipal);
+    font-family: var(--letratextos);
+    font-size: 1em;
+    margin-top: 5px;
+}
+
+main section a {
+    text-decoration: none;
+    font-family: var(--letratextos);
+    font-size: small;
+    background-color: var(--corlinksebotoes);
+    color: white;
+    padding: 7px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.36);
+}
+
+main section a:hover{
+    box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.587);
+}
+picture img{
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+}
+
+.apresentacao {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    padding: 20px 20px;
+    border-bottom: 1px solid var(--corprincipal);
+}
+@media (max-width: 600px) {
+    .apresentacao {
+        flex-direction: column;
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
 }
