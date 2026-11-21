@@ -1,18 +1,19 @@
 @charset "UTF-8";
 
 /*
-    MAPA DO ARQUIVO — procure o número ou o nome com Ctrl+F.
-    01  Cores e fontes           05  Apresentação e seções
-    02  Tipografia e foco        06  Grupos de cartões
-    03  Cabeçalho e idiomas      07  Trajetória, mídia e contato
-    04  Links e botão            08  Rodapé
-                                 09  Celular (até 600px)
-
-    As classes descrevem aparência ou função e podem se repetir.
-    Os IDs do HTML identificam destinos e o painel controlado pelo botão.
+    MAPA DO ARQUIVO
+    01  Cores e fontes
+    02  Tipografia e foco
+    03  Cabeçalho e idiomas
+    04  Links e botão
+    05  Apresentação e seções
+    06  Grupos de cartões
+    07  Trajetória, mídia e contato
+    08  Rodapé
+    09  Celular (até 600px)
 */
 
-/* 01 — Cores e fontes. Estes valores atendem aos três idiomas. */
+/* 01 — Cores e fontes.*/
 :root {
     --corfundo: #F8F6F1;
     --corprincipal: #182F46;
@@ -24,7 +25,7 @@
     --sombra-texto: 1px 1px 1px rgba(0, 0, 0, 0.163);
 }
 
-/* 02 — Tipografia e foco. Títulos mantêm a escala do index original. */
+/* 02 — Tipografia e foco.*/
 body {
     margin: 0;
     background-color: var(--corfundo);
@@ -60,7 +61,6 @@ p {
     font: 0.9em var(--letratextos);
 }
 
-/* Uma categoria acima do título é um rótulo, como “Operações”. */
 .rotulo {
     margin: 0;
     font-size: 1em;
@@ -71,7 +71,7 @@ p {
     outline-offset: 2px;
 }
 
-/* 03 — Cabeçalho e idiomas. Mesma marcação nas cinco páginas. */
+/* 03 — Cabeçalho e idiomas.*/
 .cabecalho {
     display: flex;
     justify-content: space-between;
@@ -91,7 +91,6 @@ p {
     font-size: large;
 }
 
-/* No computador, as duas navegações participam do flex do cabeçalho. */
 .painel-menu {
     display: contents;
 }
@@ -128,7 +127,7 @@ p {
     display: none;
 }
 
-/* 04 — Links e botão. Aplique a classe diretamente no elemento <a>. */
+/* 04 — Links e botão.*/
 .link, .botao {
     text-decoration: none;
 }
@@ -155,7 +154,7 @@ p {
     box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.587);
 }
 
-/* 05 — Apresentação e seções. Combine .secao com uma variação quando preciso. */
+/* 05 — Apresentação e seções.*/
 .apresentacao {
     display: flex;
     justify-content: space-between;
@@ -234,7 +233,7 @@ a.cartao:hover, .cartao--destaque:hover {
     font-weight: bold;
 }
 
-/* 07 — Trajetória, mídia e contato. Padrões reutilizados nas páginas internas. */
+/* 07 — Trajetória, mídia e contato.*/
 .lista-links, .contato-links {
     display: flex;
     flex-wrap: wrap;
@@ -290,7 +289,7 @@ a.cartao:hover, .cartao--destaque:hover {
     overflow-wrap: anywhere;
 }
 
-/* 08 — Rodapé. O crédito usa a mesma cor do texto do rodapé. */
+/* 08 — Rodapé.*/
 .rodape {
     text-align: center;
     background-color: var(--corlinksebotoes);
@@ -308,7 +307,7 @@ a.cartao:hover, .cartao--destaque:hover {
     outline-color: white;
 }
 
-/* 09 — Celular (até 600px). Sem JavaScript, os links continuam visíveis. */
+/* 09 — Celular (até 600px).*/
 @media (max-width: 600px) {
     .cabecalho {
         flex-wrap: wrap;
