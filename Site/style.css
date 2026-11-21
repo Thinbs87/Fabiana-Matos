@@ -42,6 +42,14 @@ h3 {
     margin-bottom: 0;
 }
 
+h4 {
+    color: var(--corprincipal);
+    font-family: var(--letratitulos);
+    font-weight: lighter;
+    font-size: 1em;
+    margin: 0;
+}
+
 p {
     color: var(--corprincipal);
     font-family: var(--letratextos);
@@ -53,6 +61,16 @@ p {
 .trajetoria h2,
 .midia h2 {
     margin-bottom: 12px;
+}
+
+.linkexterno {
+    text-decoration: none;
+    color: var(--corlinksebotoes);
+    font-weight: bold;
+}
+
+.linkexterno:hover {
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.163);
 }
 
 /* Cabeçalho */
@@ -102,6 +120,13 @@ header a:hover {
 }
 
 #linguas a:hover {
+    text-decoration: underline;
+}
+
+#local {
+    color: var(--corlinksebotoes);
+    font-family: var(--letratitulos);
+    font-weight: bolder;
     text-decoration: underline;
 }
 
@@ -174,7 +199,7 @@ picture img {
 }
 
 #destaque p {
-    font-size: 1.3em;
+    font-size: 1.1em;
     font-weight: bold;
 }
 
