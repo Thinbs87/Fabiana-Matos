@@ -1,0 +1,368 @@
+@charset "UTF-8";
+
+/*
+    MAPA DO ARQUIVO — procure o número ou o nome com Ctrl+F.
+    01  Cores e fontes           05  Apresentação e seções
+    02  Tipografia e foco        06  Grupos de cartões
+    03  Cabeçalho e idiomas      07  Trajetória, mídia e contato
+    04  Links e botão            08  Rodapé
+                                 09  Celular (até 600px)
+
+    As classes descrevem aparência ou função e podem se repetir.
+    Os IDs do HTML identificam destinos e o painel controlado pelo botão.
+*/
+
+/* 01 — Cores e fontes. Estes valores atendem aos três idiomas. */
+:root {
+    --corfundo: #F8F6F1;
+    --corprincipal: #182F46;
+    --corlinksebotoes: #155C5B;
+    --corcartao: #BEDFD4;
+
+    --letratitulos: 'DM Serif Text', 'Spectral', Georgia, serif;
+    --letratextos: 'DM Sans', 'Source Sans 3', Arial, sans-serif;
+    --sombra-texto: 1px 1px 1px rgba(0, 0, 0, 0.163);
+}
+
+/* 02 — Tipografia e foco. Títulos mantêm a escala do index original. */
+body {
+    margin: 0;
+    background-color: var(--corfundo);
+}
+
+h1, h2, h3, p {
+    color: var(--corprincipal);
+}
+
+h1, h2, h3, .rotulo, .subtitulo {
+    font-family: var(--letratitulos);
+}
+
+h1 {
+    margin: 0;
+    font-size: 3em;
+}
+
+h2 {
+    margin: 3px 0 0;
+    font-size: 1.5em;
+    font-weight: lighter;
+}
+
+h3, .subtitulo {
+    margin-bottom: 0;
+    font-size: 1.1em;
+    font-weight: lighter;
+}
+
+p {
+    margin-top: 5px;
+    font: 0.9em var(--letratextos);
+}
+
+/* Uma categoria acima do título é um rótulo, como “Operações”. */
+.rotulo {
+    margin: 0;
+    font-size: 1em;
+}
+
+:focus-visible {
+    outline: 2px solid var(--corlinksebotoes);
+    outline-offset: 2px;
+}
+
+/* 03 — Cabeçalho e idiomas. Mesma marcação nas cinco páginas. */
+.cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 3px 3px 4px;
+    border-bottom: 1px solid;
+}
+
+.marca, .navegacao a, .idiomas a {
+    color: var(--corprincipal);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.marca {
+    font-family: var(--letratitulos);
+    font-size: large;
+}
+
+/* No computador, as duas navegações participam do flex do cabeçalho. */
+.painel-menu {
+    display: contents;
+}
+
+.navegacao a {
+    padding: 5px;
+    font-family: var(--letratextos);
+    color: var(--corlinksebotoes);
+}
+
+.navegacao a:hover, .navegacao a:focus-visible {
+    background-color: var(--corlinksebotoes);
+    color: white;
+    border-radius: 5px;
+    box-shadow: inset 2px 1px 3px rgba(0, 0, 0, 0.25);
+}
+
+.navegacao [aria-current="page"] {
+    font-family: var(--letratitulos);
+    text-decoration: underline;
+}
+
+.idiomas a {
+    padding: 2px;
+    font-family: var(--letratextos);
+    font-size: 0.9em;
+}
+
+.idiomas a:hover {
+    text-decoration: underline;
+}
+
+.menu-botao {
+    display: none;
+}
+
+/* 04 — Links e botão. Aplique a classe diretamente no elemento <a>. */
+.link, .botao {
+    text-decoration: none;
+}
+
+.link {
+    color: var(--corlinksebotoes);
+    font-weight: bold;
+}
+
+.link:hover {
+    text-shadow: var(--sombra-texto);
+}
+
+.botao {
+    padding: 7px;
+    border-radius: 5px;
+    background-color: var(--corlinksebotoes);
+    color: white;
+    font: small var(--letratextos);
+    box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.36);
+}
+
+.botao:hover {
+    box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.587);
+}
+
+/* 05 — Apresentação e seções. Combine .secao com uma variação quando preciso. */
+.apresentacao {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    margin: 0 20px;
+    padding: 10px 0 13px;
+    border-bottom: 1px solid var(--corprincipal);
+}
+
+.apresentacao-imagem {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+}
+
+.secao {
+    padding: 10px 20px;
+}
+
+/* Borda recuada nas laterais, como em Trajetória e Na mídia da home. */
+.secao--dividida {
+    margin: 0 20px;
+    padding-inline: 0;
+    border-bottom: 1px solid var(--corprincipal);
+}
+
+.titulo-secao {
+    margin-bottom: 12px;
+}
+
+/* 06 — Grupos de cartões. A grade distribui os itens. O cartão cuida da superfície. */
+.grade-cartoes {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.grade-cartoes--dupla {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.cartao {
+    padding: 5px;
+    border-radius: 3px;
+    background-color: var(--corcartao);
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.143);
+    color: var(--corprincipal);
+    text-decoration: none;
+}
+
+a.cartao:hover, .cartao--destaque:hover {
+    box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.478);
+}
+
+.cartao h3 {
+    margin-top: 0;
+}
+
+/* Na grade de Atuação, o cartão de parcerias ocupa a linha inteira. */
+.cartao--largo {
+    grid-column: 1 / -1;
+}
+
+/* O destaque tem dois links independentes, ambos dentro do mesmo cartão. */
+.cartao--destaque {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-top: 24px;
+}
+
+.cartao--destaque p {
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+/* 07 — Trajetória, mídia e contato. Padrões reutilizados nas páginas internas. */
+.lista-links, .contato-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.lista-links {
+    gap: 8px;
+    color: var(--corprincipal);
+    font-family: var(--letratextos);
+}
+
+.resumo-trajetoria {
+    margin: 7px 0 5px;
+}
+
+.grade-midia {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.chamada-midia {
+    text-decoration: none;
+    color: var(--corlinksebotoes);
+}
+
+.chamada-midia:hover {
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.325);
+}
+
+.faixa-contato {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.contato-links {
+    gap: 16px;
+}
+
+.registro + .registro {
+    margin-top: 16px;
+}
+
+.registro > p, .texto-interno {
+    max-width: 72ch;
+}
+
+.endereco-email {
+    overflow-wrap: anywhere;
+}
+
+/* 08 — Rodapé. O crédito usa a mesma cor do texto do rodapé. */
+.rodape {
+    text-align: center;
+    background-color: var(--corlinksebotoes);
+    color: white;
+    font-size: 0.8em;
+}
+
+.rodape a {
+    color: inherit;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.rodape a:focus-visible {
+    outline-color: white;
+}
+
+/* 09 — Celular (até 600px). Sem JavaScript, os links continuam visíveis. */
+@media (max-width: 600px) {
+    .cabecalho {
+        flex-wrap: wrap;
+    }
+
+    .painel-menu {
+        display: block;
+        width: 100%;
+    }
+
+    .navegacao {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .navegacao a, .idiomas a {
+        display: inline-flex;
+        align-items: center;
+        min-height: 44px;
+        box-sizing: border-box;
+    }
+
+    .menu-pronto .menu-botao {
+        display: inline-grid;
+        place-items: center;
+        min-width: 44px;
+        min-height: 44px;
+        padding: 0;
+        color: var(--corlinksebotoes);
+        background: transparent;
+        border: 0;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+
+    .menu-pronto .menu-botao[aria-expanded="false"] + .painel-menu {
+        display: none;
+    }
+
+    .apresentacao {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .grade-cartoes {
+        grid-template-columns: 1fr;
+    }
+
+    .grade-midia {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .cartao--destaque {
+        flex-wrap: wrap;
+    }
+}
